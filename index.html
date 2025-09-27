@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicación de Sorteos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎲 Aplicación de Sorteos</h1>
+            <p>Ingresa nombres y realiza sorteos con animación</p>
+        </header>
+
+        <div class="input-section">
+            <div class="bulk-input">
+                <h3>Modo Bulk (varios nombres)</h3>
+                <textarea id="bulkInput" placeholder="Ingresa nombres separados por comas o líneas nuevas...&#10;Ejemplo: Juan, María, Carlos&#10;o uno por línea"></textarea>
+                <button id="addBulkBtn" class="btn-secondary">Agregar Todos</button>
+            </div>
+
+            <div class="individual-input">
+                <h3>Agregar Individual</h3>
+                <input type="text" id="individualInput" placeholder="Nombre del participante">
+                <button id="addIndividualBtn" class="btn-secondary">Agregar</button>
+            </div>
+        </div>
+
+        <div class="participants-section">
+            <h3>Participantes (<span id="participantCount">0</span>)</h3>
+            <div id="participantsList" class="participants-list"></div>
+            <button id="clearAllBtn" class="btn-danger">Limpiar Lista</button>
+        </div>
+
+        <div class="raffle-section">
+            <button id="startRaffleBtn" class="btn-primary" disabled>🎯 EMPEZAR SORTEO</button>
+            <div id="animationArea" class="animation-area"></div>
+            <div id="winnerDisplay" class="winner-display"></div>
+            <button id="newRaffleBtn" class="btn-secondary" style="display: none;">Nuevo Sorteo</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
