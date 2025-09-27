@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteo CogniTech - Aplicación de Sorteos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎲 Sorteo CogniTech</h1>
+            <p>Realiza sorteos de forma fácil y divertida</p>
+        </header>
+
+        <main>
+            <!-- Input Section -->
+            <section class="input-section">
+                <h2>Agregar Participantes</h2>
+                
+                <!-- Individual name entry -->
+                <div class="name-input-group">
+                    <input type="text" id="singleName" placeholder="Ingresa un nombre" maxlength="50">
+                    <button id="addSingleBtn" class="btn-secondary">Agregar</button>
+                </div>
+
+                <!-- Bulk name entry -->
+                <div class="bulk-input-group">
+                    <label for="bulkNames">O ingresa varios nombres (uno por línea):</label>
+                    <textarea id="bulkNames" placeholder="Juan Pérez&#10;María García&#10;Carlos López" rows="4"></textarea>
+                    <button id="addBulkBtn" class="btn-secondary">Agregar Todos</button>
+                </div>
+            </section>
+
+            <!-- Participants List -->
+            <section class="participants-section">
+                <div class="participants-header">
+                    <h2>Participantes (<span id="participantCount">0</span>)</h2>
+                    <button id="clearAllBtn" class="btn-danger">Limpiar Todo</button>
+                </div>
+                <div id="participantsList" class="participants-list">
+                    <p class="empty-state">No hay participantes agregados</p>
+                </div>
+            </section>
+
+            <!-- Raffle Section -->
+            <section class="raffle-section">
+                <button id="startRaffleBtn" class="btn-primary" disabled>
+                    🎯 EMPEZAR SORTEO
+                </button>
+                
+                <div id="raffleAnimation" class="raffle-animation hidden">
+                    <div class="wheel-container">
+                        <div id="raffleWheel" class="raffle-wheel"></div>
+                        <div class="wheel-pointer">▼</div>
+                    </div>
+                </div>
+
+                <div id="winnerDisplay" class="winner-display hidden">
+                    <h2>🎉 ¡GANADOR!</h2>
+                    <div class="winner-name"></div>
+                    <div class="winner-actions">
+                        <button id="newRaffleBtn" class="btn-secondary">Nuevo Sorteo</button>
+                        <button id="removeWinnerBtn" class="btn-warning">Remover Ganador</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Storage Controls -->
+        <footer>
+            <div class="storage-controls">
+                <button id="saveListBtn" class="btn-outline">💾 Guardar Lista</button>
+                <button id="loadListBtn" class="btn-outline">📂 Cargar Lista</button>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
